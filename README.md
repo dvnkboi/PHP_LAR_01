@@ -13,7 +13,9 @@
 **font-end**
   - Jquery for interaction, hover states ...
   - bootstrap
+  
 **back-end**
   - Laravel MVC + PHP
+  
 **database provider**
   - firebase https://firebase.google.com/
