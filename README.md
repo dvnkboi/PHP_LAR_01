@@ -11,11 +11,12 @@
 
 # technologies used 
 **font-end**
-  - Jquery for interaction, hover states ...
-  - bootstrap
+  - Jquery https://jquery.com/
+  - bootstrap https://getbootstrap.com/
   
 **back-end**
-  - Laravel MVC + PHP
+  - PHP https://www.php.net/
+  - Laravel https://laravel.com/
   
 **database provider**
   - firebase https://firebase.google.com/
