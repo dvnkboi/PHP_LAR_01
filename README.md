@@ -3,10 +3,12 @@
 
 
 ## PROCESS
-1. design website and all pages in figma
-2. translate design to bootstrap compatible code 
-3. separate the basic html css website into blade components 
-4. implement the components into laravel and perform basic routing
+1. Website design and all pages in Figma.
+2. Translate the design into bootstrap compatible code using Bootstrap Studio.
+3. Separate the basic html css website into Laravel Blade components.
+4. implement the components in laravel and perform basic routing.
+5. Model creation and its methods.
+6. Controllers and Features.
 
 
 ## technologies used 
