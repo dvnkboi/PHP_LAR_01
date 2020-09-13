@@ -19,4 +19,9 @@
   - Laravel https://laravel.com/
   
 **database provider**
-  - firebase https://firebase.google.com/
+  - Mysql PDO driver
+  - Mysql Server
+  
+**DESIGN**
+  -Figma https://figma.com/
+  -Bootstrap studio https://bootstrapstudio.io/
