@@ -23,5 +23,6 @@
   - Mysql Server
   
 **DESIGN**
--Figma https://figma.com/
--Bootstrap studio https://bootstrapstudio.io/
+- Figma https://figma.com/
+- Bootstrap studio https://bootstrapstudio.io/
+  
