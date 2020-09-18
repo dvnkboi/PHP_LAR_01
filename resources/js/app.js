@@ -6,6 +6,11 @@ $('.carousel-control-prev').on('click', () => $('#carousel-1').carousel('prev'))
 $('.carousel-control-next').on('click', () => $('#carousel-1').carousel('next'));
 
 
+
+$('.logoCont').on('click', () => {
+    window.location.href = '/';
+});
+
 $('.shopCard').on('click', function (evt) {
     if($(this).hasClass('active')){
         $(this).removeClass('active');
