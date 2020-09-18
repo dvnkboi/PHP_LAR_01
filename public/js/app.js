@@ -37272,6 +37272,9 @@ $('.carousel-control-prev').on('click', function () {
 $('.carousel-control-next').on('click', function () {
   return $('#carousel-1').carousel('next');
 });
+$('.logoCont').on('click', function () {
+  window.location.href = '/';
+});
 $('.shopCard').on('click', function (evt) {
   if ($(this).hasClass('active')) {
     $(this).removeClass('active');
@@ -37425,8 +37428,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Ayman\Documents\PHP_Laravel\project_MVC\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Ayman\Documents\PHP_Laravel\project_MVC\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Ayman\Documents\Bootstrap Studio\sync test\PHP_LAR_01\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Ayman\Documents\Bootstrap Studio\sync test\PHP_LAR_01\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
