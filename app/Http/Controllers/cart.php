@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 class cart extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function init($inData){
         $data = explode("_",$inData);
         $cartItems = [];
