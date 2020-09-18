@@ -37296,11 +37296,17 @@ $('.shopCard').on('click', function (evt) {
   });
 });
 $('.addToCartTxt , .buyNow, .checkoutCart').on('click', function (evt) {
-  $('.modal').css('display', 'block');
+  $('.modal').css({
+    'opacity': 1,
+    'pointer-events': 'auto'
+  });
   $('.modal').addClass('show');
 });
 $('.closeBtn , .close').on('click', function (evt) {
-  $('.modal').css('display', 'none');
+  $('.modal').css({
+    'opacity': 0,
+    'pointer-events': 'none'
+  });
   $('.modal').removeClass('show');
   return;
 });

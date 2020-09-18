@@ -98,15 +98,15 @@
                         </div>
                     </div>
                 </div>
-                <div role="dialog" tabindex="-1" class="modal fade" style="display: none;background:rgba(0, 0, 0, 0.5)">
+                <div role="dialog" tabindex="-1" class="modal fade" style="background:rgba(0, 0, 0, 0.5)">
                     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Checkout</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                <h4 class="modal-title">Checkout</h4><button style="outline: none!important;border: none!important;box-shadow: none!important;" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                             <div class="modal-body">
                                 <p style='font-size:30px;'>We only support Checkouts using Paypal at the Moment, please proceed to checkout or cancel using the buttons</p>
                             </div>
-                            <div class="modal-footer"><button class="btn closeBtn" type="button" data-dismiss="modal">Close</button><button class="btn checkout" type="button">Proceed To Paypal Checkout</button></div>
+                            <div class="modal-footer"><button class="btn closeBtn" style="outline: none!important;border: none!important;box-shadow: none!important;" type="button" data-dismiss="modal">Close</button><button class="btn checkout" type="button">Proceed To Paypal Checkout</button></div>
                         </div>
                     </div>
                 </div>
