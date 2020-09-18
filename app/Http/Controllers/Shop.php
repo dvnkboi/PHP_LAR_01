@@ -12,7 +12,6 @@ class Shop extends Controller
         $shopM = new ShopModel;
 
         $shop = $shopM->getAll();
-        $E = [];
         return view('shop')->with('shop',$shop);
 
     }

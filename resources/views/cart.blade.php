@@ -3,6 +3,7 @@
 @section("content")
 
 <div class="d-flex flex-column flex-fill justify-content-start align-items-center body">
+    <div data='{{$sum}}' class="checkoutCart">${{$sum}} - Checkout</div>
     <div class="row shopHeader"></div>
     <div class="row d-flex flex-fill justify-content-center align-items-center shopList" style="height: 0px;">
         <div class="col d-flex flex-fill justify-content-start align-items-start" style="height: 100%;max-height: 100%;">
@@ -10,13 +11,18 @@
                 <div class="row flex-fill" style="max-height: 100%;">
                     <div class="col d-flex flex-row flex-fill justify-content-start align-items-start flex-wrap" style="max-height: 100%;">
 
-                        @forelse ($shop as $item)
+                        @forelse ($userCart as $item)
 
-                        <div class="d-flex flex-column justify-content-center align-items-center shopCard"  style="position: relative;background: #252525;box-shadow: -1px 1px 0px {{$item->color}};">
-                            <div data='{{$item->itemID}}' class="d-flex justify-content-center align-items-center addCart">
-                                <img src="/img/icons/shopping-cart.svg" style="height: 16px;filter:invert(1);">
+                        <div class="d-flex flex-column justify-content-center align-items-center shopCard" data='{{$item->itemID}}' style="position: relative;background: #252525;box-shadow: -1px 1px 0px {{$item->color}};">
+                            <form id='form-{{$item->itemID}}' style="display: none;" action="/cart/{{$item->itemID}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                            </form>
+                            <div bind-form='{{$item->itemID}}' class="d-flex justify-content-center align-items-center removeCart" onclick="event.stopPropagation(); var form = $(document).find('#form-'+ {{$item->itemID}});form.submit();">
+                                <div class="removeStripe"></div>
                             </div>
-                            <div class="row flex-fill" style="width: 100%;z-index:1;">
+
+                            <div class="row flex-fill" style="width: 100%;">
                                 <div class="col d-flex justify-content-center align-items-center" style="z-index: 1;width: 50%;">
                                     <div class="prodImgCont"><img class="prodImg" src='img/{{$item->itemID}}.png'></div>
                                 </div>
@@ -26,7 +32,7 @@
                                     <h1 class="spec3">{{$item->spec3}}</h1>
                                 </div>
                             </div>
-                            <div class="row d-flex justify-content-center align-items-center extraInfo" style="width: 100%;height: 0px;opacity:0;z-index:1;">
+                            <div class="row d-flex justify-content-center align-items-center extraInfo" style="width: 100%;height: 0px;opacity:0;">
                                 <div class="col d-flex justify-content-center align-items-center">
                                     <div class="d-flex justify-content-between align-items-center prodInfoCard" style="width: 100%;height: 40px;">
                                         <h1 class="prodCompany">${{$item->price}}</h1>
@@ -34,7 +40,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row d-flex justify-content-center align-items-center" style="width: 100%;height: 50px;z-index:1;">
+                            <div class="row d-flex justify-content-center align-items-center" style="width: 100%;height: 50px;">
                                 <div class="col d-flex justify-content-center align-items-center">
                                     
                                     <div class="d-flex justify-content-between align-items-center prodInfoCard" style="width: 100%;height: 40px;">
@@ -43,26 +49,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row" style="width: 100%;z-index:1;">
+                            <div class="row" style="width: 100%;">
                                 <div class="col d-flex justify-content-center align-items-center" style="width: 100%;">
                                     <div class="addCartBtn" style="background:{{$item->color}}">
-                                        <h3 class="d-flex justify-content-center align-items-center addToCartTxt">Buy Now</h3>
+                                        <h3 class="d-flex justify-content-center align-items-center addToCartTxt">APPLY COUPON</h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <style>
-                            .body{
-                                overflow: auto!important;
-                            }
-                        </style>
+                            
                         @empty
 
                         <div class="d-flex flex-column justify-content-center align-items-center" style="color:#ebebeb;display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:80px">
                             no item found :c
                             <img src="img/cat.jpg" alt="sad cat" style="max-width: 400px;border-radius:15px">
                         </div>
-                            
                         @endforelse
                         
 

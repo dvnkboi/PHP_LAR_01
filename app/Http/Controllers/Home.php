@@ -7,6 +7,12 @@ use App\ShopModel;
 
 class Home extends Controller
 {
+
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+    
     public function init(){
 
         $shopM = new ShopModel;
@@ -14,4 +20,5 @@ class Home extends Controller
         $shop = $shopM->getFeatured();
         return view('home')->with('featured',$shop);
     }
+
 }

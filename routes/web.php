@@ -14,7 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/'      , 'Home@init');
+Route::get('/out'   , '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::view('/about' , 'about');
 
 Route::get('/shop'  , 'Shop@init');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/cart/{inData}','cart@init')->name('cart');
+
+Route::get('/cart','cart@index')->name('cart');
+
+Route::delete('/cart/{inData}','cart@remove');

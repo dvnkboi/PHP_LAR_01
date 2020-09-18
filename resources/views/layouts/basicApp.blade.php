@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>PHP PROJ 2</title>
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -11,7 +12,17 @@
 
 
 
-<body style="height: 100%;width: 100%;background: #363636;">
+<body class="noselect" style="height: 100%;width: 100%;background: #363636;">
+
+    @if(count($errors) > 0)
+    <div style="color:red">
+        @foreach ($errors->all() as $message)
+            <ul>
+                <li>{{$message}}</li>
+            </ul>
+        @endforeach
+    </div>
+    @endif
     <div class="app">
         <div style="position: relative;height: 100%;width: 100%;border-radius: 25px;overflow: hidden;box-shadow: 0px 4px 25px rgba(0,0,0,0.35);">
             <div class="solidBg"></div>
@@ -32,7 +43,7 @@
                                     <h1 class="d-flex justify-content-center align-items-center logo" style="transition: color 300ms 100ms ease;">T</h1>
                                 </div>
                             </div>
-                            <div class="col-xl-8 d-flex flex-fill justify-content-end align-items-center">
+                            <div class="col-xl-8 d-flex flex-fill justify-content-end align-items-center" style="position: relative;">
                                 <a class="navItem 
                                     @if (Request::is('/'))
                                     special
@@ -51,11 +62,53 @@
                                     @endif" 
                                     href="shop">Shop
                                 </a>
+                                @guest <a href="login"> @endguest
+                                <div class="d-flex justify-content-center align-items-center avatar" >
+                                <img src="img/icons/smile.svg" style="width: 32px;" /></div>
+                                @guest </a> @endguest
+                                @auth
+                                <script>
+                                    function defer(method) {
+                                        if (window.jQuery) {
+                                            method();
+                                        } else {
+                                            setTimeout(function() { defer(method) }, 50);
+                                        }
+                                    }
+                                    defer(function () {
+                                        $('.avatar').on('click',() => {
+                                            if(!$(".avatar").hasClass('active')){
+                                                $(".avatar").addClass('active');
+                                                $(".avatarDropdown").css({
+                                                    'opacity':1,
+                                                    'transform':'translateY(0px)',
+                                                    'pointer-events':'auto'
+                                                });
+                                                return;
+                                            }
+                                            $(".avatar").removeClass('active');
+                                            $(".avatarDropdown").css({
+                                                'opacity':0,
+                                                'transform':'translateY(-6px)',
+                                                'pointer-events':'none'
+                                            });
+                                        });
+                                    });
+                                </script>
+                                @endauth
+                                <div class="d-flex flex-column justify-content-center align-items-center avatarDropdown">
+                                    <div id='cartBtn' data='' class="d-flex flex-fill justify-content-center align-items-center dropdownItem" style="z-index: 3;border-radius: 25px;">
+                                        <h1 class="d-flex justify-content-center align-items-center" style="color: #ebebeb;font-size: inherit;">Cart</h1>
+                                    </div>
+                                    <div id='logOut' class="d-flex flex-fill justify-content-center align-items-center dropdownItem" style="z-index: 2;border-radius: 25px;">
+                                        <h1 class="d-flex justify-content-center align-items-center" style="color: #ebebeb;font-size: inherit;">Logout</h1>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div role="dialog" tabindex="-1" class="modal fade" style="display: none;">
+                <div role="dialog" tabindex="-1" class="modal fade" style="display: none;background:rgba(0, 0, 0, 0.5)">
                     <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
