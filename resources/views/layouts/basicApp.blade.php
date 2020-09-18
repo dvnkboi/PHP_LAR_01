@@ -13,16 +13,6 @@
 
 
 <body class="noselect" style="height: 100%;width: 100%;background: #363636;">
-
-    @if(count($errors) > 0)
-    <div style="color:red">
-        @foreach ($errors->all() as $message)
-            <ul>
-                <li>{{$message}}</li>
-            </ul>
-        @endforeach
-    </div>
-    @endif
     <div class="app">
         <div style="position: relative;height: 100%;width: 100%;border-radius: 25px;overflow: hidden;box-shadow: 0px 4px 25px rgba(0,0,0,0.35);">
             <div class="solidBg"></div>
