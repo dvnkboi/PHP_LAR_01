@@ -109,9 +109,9 @@ $(document).ready(function(){
                 'pointer-events':'auto',
                 'transform':'translateY(0px)'
             });
-            setTimeout(() => {
-                $('.body').css('overflow','auto');
-            },300);
+            // setTimeout(() => {
+            //     $('.body').css('overflow','auto');
+            // },300);
         }
     },500);
 });
@@ -124,6 +124,11 @@ $('#logOut').on('click', () => {
 });
 
 $('.removeCart').on('click', function(event){
-    $(this).parent().css('opacity',0);
+    $(this).parent().css({
+        'opacity':0,
+        'transform':'translateY(-7px)'
+    });
+    //$('.body').css('overflow','hidden');
+    $('.checkoutCart').css('transform','translateY(64px)');
 });
 

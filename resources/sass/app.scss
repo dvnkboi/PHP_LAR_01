@@ -32,7 +32,7 @@
   border-radius: 20px 20px 0 0;
   background: #313131;
   z-index: 1;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .appCont {
@@ -645,7 +645,7 @@ a {
 
 
 .checkoutCart{
-  position: absolute;
+  position: fixed;
   bottom: 16px;
   height: 64px;
   width: 278px;
